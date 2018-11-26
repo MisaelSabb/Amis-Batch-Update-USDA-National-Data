@@ -55,8 +55,15 @@ var ElaborateUsdaData=new function(){
              //Logger.log(array[i]['attribute']);
              //Logger.log([259,tempCommodity,attribute,this.yearFormat(ind),todayDate, array[i][ind], '','']);
            }
-           //Logger.log([259,tempCommodity,attribute,this.yearFormat(ind),todayDate, array[i][ind], '',''])
-           elaArray.push([259,tempCommodity,attribute,this.yearFormat(ind),todayDate, array[i][ind], '',''])
+           //this is for extraction rate that must be in percentage
+           if(attribute==3){
+             elaArray.push([259,tempCommodity,attribute,this.yearFormat(ind),todayDate, (array[i][ind])/100, '',''])
+           }else{
+             //value without changes
+             elaArray.push([259,tempCommodity,attribute,this.yearFormat(ind),todayDate, array[i][ind], '',''])
+           }
+           
+           
          }
        }
      }
