@@ -56,7 +56,22 @@ var DatabaseUtility=new function(){
      }     
      return dataValuesForProduct;
    }
-   
+   //copy forecast
+   this.copyFrc=function (dataValuesForProduct,sliderFrcColumnFrom,sliderFrcColumnTo){     
+     sliderFrcColumnFrom= Utility.letterToColumn(sliderFrcColumnFrom)-1;
+     sliderFrcColumnTo= Utility.letterToColumn(sliderFrcColumnTo)-1;
+     //Logger.log(sliderFrcColumnFrom);
+     //Logger.log(sliderFrcColumnTo);
+     var length = dataValuesForProduct.length;
+     for(var i=0;i<length;i++){
+       //Logger.log({'col': sliderFrcColumnTo, 'arr':dataValuesForProduct[i]});
+       //Logger.log(dataValuesForProduct[i][sliderFrcColumnTo]);
+       dataValuesForProduct[i][sliderFrcColumnTo]=dataValuesForProduct[i][sliderFrcColumnFrom];  
+       dataValuesForProduct[i][sliderFrcColumnFrom] = '';
+       
+     }     
+     return dataValuesForProduct;
+   }
    this.checkIfColumnIsEmpty= function(batchRowArrayForSpecificCommodity, valuesForSpecifiCommodity, yearColumnNumber){
      
      for(var i=0;i<batchRowArrayForSpecificCommodity.length;i++){

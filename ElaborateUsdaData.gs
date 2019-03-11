@@ -6,7 +6,7 @@ var ElaborateUsdaData=new function(){
        //"attributes":[4,20,28,57,81,84,86,88,113,130,192,125,176,178,184],//All attributes
        "attributes":[4,20,28,54,57,81,182,84,86,88,113,130,7,192,149,125,161,176,178,184],//All attributes
        "countries":["US"],//US
-       "marketYears":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018],
+       "marketYears":[2011,2012,2013,2014,2015,2016,2017,2018],
        //"marketYears":[2016,2017,2018],
        "chkCommoditySummary":false,
        "chkAttribSummary":false,
@@ -81,7 +81,7 @@ var ElaborateUsdaData=new function(){
        };
 
        var resp= UrlFetchApp.fetch( Config.USDAFetchAPI, options );
-       //Logger.log(resp.getContentText());
+       Logger.log(resp.getContentText());
        return resp.getContentText();
    }
 }
